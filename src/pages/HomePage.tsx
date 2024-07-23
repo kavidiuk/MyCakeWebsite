@@ -116,7 +116,6 @@ export default function HomePage() {
         )}
       </Container>
       <ScrollToTopButton />
-      <Footer />
     </>
   );
 }

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Cake from "../services/Cake.json";
 import { Container, Grid, Button, Typography, Box } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ScrollToTopButton from "../assets/utils/Utils";
+
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const numericId = id ? parseInt(id, 10) : null;
   const mainId = Cake.find((cake) => numericId === cake.id);
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   if (!mainId) {
     return <p>No item found</p>;
   }
