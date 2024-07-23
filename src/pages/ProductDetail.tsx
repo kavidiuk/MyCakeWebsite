@@ -1,26 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Cake from "../services/Cake.json";
 import ProductsPage from "./ProductsPage";
 import { Container, Grid } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { auto, main } from "@popperjs/core";
+import { Margin } from "@mui/icons-material";
+
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
-
+  const navigate = useNavigate();
   const numericId = id ? parseInt(id, 10) : null;
   const mainId = Cake.filter((cake) => numericId === cake.id);
   //const idShow = [id];
   //const mainId = Cake.filter((Cake) => id?.includes(Cake.id));
+  if (!mainId) {
+    return <p>No item found</p>;
+  }
+  const handleBackClick = () => {
+    navigate(-1);
+  };
 
   return (
     <>
       <Container sx={{ margin: 0, marginTop: 3 }}>
-        <Link to="/">
+        <button onClick={handleBackClick}>
           <ArrowBackIcon />
-        </Link>
+        </button>
+        {/* startIcon={<ArrowBackIcon />} */}
       </Container>
       <Container sx={{ textAlign: "center", width: 800 }}>
         <h2>Item ID: {id}</h2>

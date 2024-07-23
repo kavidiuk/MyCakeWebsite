@@ -79,7 +79,7 @@ const ProductsPage: React.FC = () => {
                 title={cake.title}
                 description={cake.description}
                 image={cake.img}
-                id={0} // price={cake.id} // Assumendo che non ci sia una proprietà "price" in Cake.json
+                id={cake.id} // price={cake.id} // Assumendo che non ci sia una proprietà "price" in Cake.json
               />
             </Grid>
           ))}
