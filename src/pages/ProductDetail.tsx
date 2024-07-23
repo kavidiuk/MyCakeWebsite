@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import ProductCard from "../components/ProductCard";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import React from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Cake from "../services/Cake.json";
-import ProductsPage from "./ProductsPage";
 import { Container, Grid } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { auto, main } from "@popperjs/core";
-import { Margin } from "@mui/icons-material";
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();

@@ -28,7 +28,9 @@ function Navbar() {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          titolo1
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            titolo1
+          </Link>
         </Typography>
         {isSmallScreen ? (
           <>

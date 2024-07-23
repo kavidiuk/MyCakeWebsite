@@ -7,7 +7,6 @@ import {
   useTheme,
 } from "@mui/material";
 import React from "react";
-//import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
 import Cake from "../services/Cake.json";
@@ -21,15 +20,15 @@ export default function HomePage() {
 
   return (
     <>
-      {/* <Navbar/> */}
       <Container>
         {isSmallScreen ? (
           <Box my={4}>
             <Typography variant="h3" align="center" gutterBottom>
               lorem1
             </Typography>
-            <Grid spacing={6} width="15rem">
-              <Grid xs={12} sm={6} md={4}>
+            {/* width="15rem" */}
+            <Grid spacing={6}>
+              <Grid item xs={12} sm={6} md={4} sx={{ p: 2 }}>
                 <ProductCard
                   title={mainProducts[0].title}
                   description={mainProducts[0].description}
@@ -37,7 +36,7 @@ export default function HomePage() {
                   id={mainProducts[0].id}
                 />
               </Grid>
-              <Grid xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4} sx={{ p: 2 }}>
                 <ProductCard
                   title={mainProducts[1].title}
                   description={mainProducts[1].description}
@@ -45,7 +44,7 @@ export default function HomePage() {
                   id={mainProducts[1].id}
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={4} sx={{ display: "flex" }}>
+              <Grid item xs={12} sm={6} md={4} sx={{ p: 2 }}>
                 <ProductCard
                   title={mainProducts[2].title}
                   description={mainProducts[2].description}
@@ -53,7 +52,7 @@ export default function HomePage() {
                   id={mainProducts[2].id}
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4} sx={{ p: 2 }}>
                 <ProductCard
                   title={mainProducts[3].title}
                   description={mainProducts[3].description}
@@ -69,7 +68,7 @@ export default function HomePage() {
               lorem1
             </Typography>
             <Grid container spacing={4}>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4} sx={{ p: 2 }}>
                 <ProductCard
                   title={mainProducts[0].title}
                   description={mainProducts[0].description}
@@ -87,7 +86,7 @@ export default function HomePage() {
               <img src={mainProducts[1].img} alt="" />
               </Box>
               </Modal> */}
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4} sx={{ p: 2 }}>
                 <ProductCard
                   title={mainProducts[1].title}
                   description={mainProducts[1].description}
@@ -95,7 +94,7 @@ export default function HomePage() {
                   id={mainProducts[1].id}
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4} sx={{ p: 2 }}>
                 <ProductCard
                   title={mainProducts[2].title}
                   description={mainProducts[2].description}
@@ -103,7 +102,7 @@ export default function HomePage() {
                   id={mainProducts[2].id}
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4} sx={{ p: 2 }}>
                 <ProductCard
                   title={mainProducts[3].title}
                   description={mainProducts[3].description}
