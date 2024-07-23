@@ -1,20 +1,19 @@
 import React from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Cake from "../services/Cake.json";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Button, Typography, Box } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-
+import ScrollToTopButton from "../assets/utils/Utils";
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const location = useLocation();
   const navigate = useNavigate();
   const numericId = id ? parseInt(id, 10) : null;
-  const mainId = Cake.filter((cake) => numericId === cake.id);
-  //const idShow = [id];
-  //const mainId = Cake.filter((Cake) => id?.includes(Cake.id));
+  const mainId = Cake.find((cake) => numericId === cake.id);
+
   if (!mainId) {
     return <p>No item found</p>;
   }
+
   const handleBackClick = () => {
     navigate(-1);
   };
@@ -22,73 +21,62 @@ const ProductDetail: React.FC = () => {
   return (
     <>
       <Container sx={{ margin: 0, marginTop: 3 }}>
-        <button onClick={handleBackClick}>
-          <ArrowBackIcon />
-        </button>
-        {/* startIcon={<ArrowBackIcon />} */}
+        <Button
+          onClick={handleBackClick}
+          startIcon={<ArrowBackIcon />}
+          variant="outlined"
+        >
+          Back
+        </Button>
       </Container>
-      <Container sx={{ textAlign: "center", width: 800 }}>
-        <h2>Item ID: {id}</h2>
-        {/* <p>Current Path: {location.pathname}</p> */}
-
-        {mainId.length > 0 ? (
-          <Grid
-            direction="column"
-            alignItems="center"
-            sx={{ minHeight: "100vh" }}
-          >
-            <h2>{mainId[0].title}</h2>
-
-            <img
-              style={{ height: 300, width: 400 }}
-              src={mainId[0].img}
-              alt={mainId[0].title}
-            />
-            <h3>Description: {mainId[0].description}</h3>
-            <hr />
-            <h5>Categoria: {mainId[0].category}</h5>
-            <h5>Difficoltà: {mainId[0].difficulty}</h5>
-            <h5>Prepazione: {mainId[0].preparationTime}</h5>
-            <h5>Numero di persone: {mainId[0].servings}</h5>
-            <h5>Ricetta: {mainId[0].recipes}</h5>
-            <iframe
-              width="800"
-              height="400"
-              src={mainId[0].video}
-              title={mainId[0]["video-title"]}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-            <Grid item xs={12} sm={6} md={4}></Grid>
-          </Grid>
-        ) : (
-          <p>No item found</p>
-        )}
-
-        {/* <ProductCard id={} /> */}
-        {/* <ProductCard title={mainId[1].img} id={0} description={""} image={""} /> */}
+      <Container sx={{ textAlign: "center", mt: 3, mb: 3 }}>
+        <Typography variant="h4" component="h2" gutterBottom>
+          Item ID: {id}
+        </Typography>
+        <Box sx={{ maxWidth: "100%", mb: 3 }}>
+          <img
+            style={{ maxWidth: "100%", height: "auto" }}
+            src={mainId.img}
+            alt={mainId.title}
+          />
+        </Box>
+        <Typography variant="h5" component="h3" gutterBottom>
+          {mainId.title}
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          {mainId.description}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Categoria: {mainId.category}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Difficoltà: {mainId.difficulty}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Preparazione: {mainId.preparationTime}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Numero di persone: {mainId.servings}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Ricetta: {mainId.recipes}
+        </Typography>
+        <Box sx={{ width: "100%", mt: 3 }}>
+          <iframe
+            width="100%"
+            height="400"
+            src={mainId.video}
+            title={mainId["video-title"]}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </Box>
       </Container>
+      <ScrollToTopButton />
     </>
   );
 };
 
 export default ProductDetail;
-
-// const arr = [
-//   {
-//     id,
-//   },
-// ];
-
-{
-  /* title={mainId[0].title}
-    <h2>{mainId[0].title}</h2>
-    id={mainId[0].id}
-    <h3>main id: {mainId[0].id}</h3>
-    description={mainId[0].description}
-    <h5>Descrizione: {mainId[0].description}</h5>
-    image={mainId[0].img}
-    <img src={mainId[0].img} alt="" /> */
-}

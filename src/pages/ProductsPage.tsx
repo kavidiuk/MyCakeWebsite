@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Container, Grid, Typography, TextField } from "@mui/material";
 import ProductCard from "../components/ProductCard";
 import Cake from "../services/Cake.json";
+import ScrollToTopButton from "../assets/utils/Utils";
 
 function filterCakes(cakes: any[], searchItem: string) {
   return cakes
@@ -41,6 +42,7 @@ const ProductsPage: React.FC = () => {
           ))}
         </Grid>
       </Box>
+      <ScrollToTopButton />
     </Container>
   );
 };

@@ -10,6 +10,7 @@ import React from "react";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
 import Cake from "../services/Cake.json";
+import ScrollToTopButton from "../assets/utils/Utils";
 
 const idsShow = [1, 2, 3, 4];
 const mainProducts = Cake.filter((Cake) => idsShow.includes(Cake.id));
@@ -114,6 +115,7 @@ export default function HomePage() {
           </Box>
         )}
       </Container>
+      <ScrollToTopButton />
       <Footer />
     </>
   );
