@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetail from "./pages/ProductDetail";
 import Footer from "./components/Footer";
+import AboutUs from "./pages/AboutUs";
 const App: React.FC = () => {
   return (
     <Router>
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
       </Routes>
       <Footer />
     </Router>

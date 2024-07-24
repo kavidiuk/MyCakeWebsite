@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "title": "Torta di Mele",
+    "title": "Torta di albicoca",
     "description": "Una deliziosa torta di mele con un tocco di cannella.",
     "img": "https://images.unsplash.com/photo-1721265576553-e7f8242fc915?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
     "recipes": "Mescolare farina, zucchero e mele. Cuocere per 45 minuti a 180 gradi.",
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Facile",
-    "preparationTime": "1 ora",
+    "preparationTime": 60,
     "servings": 8,
     "category": "Dolci"
   },
@@ -21,7 +21,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Media",
-    "preparationTime": "1 ora e 30 minuti",
+    "preparationTime": 90,
     "servings": 10,
     "category": "Dolci"
   },
@@ -34,7 +34,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Facile",
-    "preparationTime": "1 ora e 15 minuti",
+    "preparationTime": 75,
     "servings": 8,
     "category": "Dolci"
   },
@@ -47,7 +47,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Media",
-    "preparationTime": "2 ore",
+    "preparationTime": 120,
     "servings": 12,
     "category": "Dolci"
   },
@@ -60,7 +60,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Difficile",
-    "preparationTime": "2 ore e 30 minuti",
+    "preparationTime": 150,
     "servings": 10,
     "category": "Dolci"
   },
@@ -73,7 +73,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Facile",
-    "preparationTime": "1 ora e 20 minuti",
+    "preparationTime": 80,
     "servings": 8,
     "category": "Dolci"
   },
@@ -86,7 +86,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Media",
-    "preparationTime": "1 ora e 10 minuti",
+    "preparationTime": 70,
     "servings": 8,
     "category": "Dolci"
   },
@@ -99,7 +99,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Media",
-    "preparationTime": "1 ora e 15 minuti",
+    "preparationTime": 75,
     "servings": 10,
     "category": "Dolci"
   },
@@ -112,7 +112,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Facile",
-    "preparationTime": "1 ora",
+    "preparationTime": 60,
     "servings": 8,
     "category": "Dolci"
   },
@@ -125,7 +125,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Facile",
-    "preparationTime": "1 ora e 30 minuti",
+    "preparationTime": 90,
     "servings": 8,
     "category": "Dolci"
   },
@@ -138,7 +138,7 @@
     "video": "https://www.youtube.com/embed/UliRWJE0CaI",
     "video-title": "Work &amp; Study Lofi Jazz v2 - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
     "difficulty": "Facile",
-    "preparationTime": "1 ora",
+    "preparationTime": 60,
     "servings": 8,
     "category": "Dolci"
   }

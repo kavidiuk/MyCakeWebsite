@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import ProductCard from "../components/ProductCard";
-import Footer from "../components/Footer";
 import Cake from "../services/Cake.json";
 import ScrollToTopButton from "../assets/utils/Utils";
 

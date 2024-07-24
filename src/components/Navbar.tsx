@@ -49,7 +49,7 @@ function Navbar() {
                 </ListItem>
                 <ListItem
                   component={Link}
-                  to="/about"
+                  to="/aboutUs"
                   onClick={handleDrawerClose}
                 >
                   <ListItemText primary="About" />
@@ -76,7 +76,7 @@ function Navbar() {
             <Button color="inherit" component={Link} to="/">
               Home
             </Button>
-            <Button color="inherit" component={Link} to="/about">
+            <Button color="inherit" component={Link} to="/aboutUs">
               About
             </Button>
             <Button color="inherit" component={Link} to="/products">

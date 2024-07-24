@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Cake from "../services/Cake.json";
 import { Container, Grid, Button, Typography, Box } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -9,12 +9,20 @@ const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const numericId = id ? parseInt(id, 10) : null;
-  const mainId = Cake.find((cake) => numericId === cake.id);
+  const product = Cake.find((cake) => numericId === cake.id);
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "auto" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-  if (!mainId) {
-    return <p>No item found</p>;
+
+  if (!product) {
+    return (
+      <Container sx={{ mt: 3, textAlign: "center" }}>
+        <Typography variant="h4" color="error">
+          No item found
+        </Typography>
+      </Container>
+    );
   }
 
   const handleBackClick = () => {
@@ -23,59 +31,66 @@ const ProductDetail: React.FC = () => {
 
   return (
     <>
-      <Container sx={{ margin: 0, marginTop: 3 }}>
+      <Container sx={{ mt: 3 }}>
         <Button
           onClick={handleBackClick}
           startIcon={<ArrowBackIcon />}
           variant="outlined"
+          sx={{ mb: 3 }}
         >
           Back
         </Button>
       </Container>
-      <Container sx={{ textAlign: "center", mt: 3, mb: 3 }}>
+      <Container sx={{ textAlign: "center", mb: 3 }}>
         <Typography variant="h4" component="h2" gutterBottom>
-          Item ID: {id}
+          {product.title}
         </Typography>
         <Box sx={{ maxWidth: "100%", mb: 3 }}>
           <img
-            style={{ maxWidth: "100%", height: "auto" }}
-            src={mainId.img}
-            alt={mainId.title}
+            style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
+            src={product.img}
+            alt={product.title}
           />
         </Box>
         <Typography variant="h5" component="h3" gutterBottom>
-          {mainId.title}
+          Description
         </Typography>
-        <Typography variant="body1" gutterBottom>
-          {mainId.description}
+        <Typography variant="body1" paragraph>
+          {product.description}
         </Typography>
-        <Typography variant="body2" gutterBottom>
-          Categoria: {mainId.category}
-        </Typography>
-        <Typography variant="body2" gutterBottom>
-          Difficoltà: {mainId.difficulty}
-        </Typography>
-        <Typography variant="body2" gutterBottom>
-          Preparazione: {mainId.preparationTime}
-        </Typography>
-        <Typography variant="body2" gutterBottom>
-          Numero di persone: {mainId.servings}
-        </Typography>
-        <Typography variant="body2" gutterBottom>
-          Ricetta: {mainId.recipes}
-        </Typography>
-        <Box sx={{ width: "100%", mt: 3 }}>
-          <iframe
-            width="100%"
-            height="400"
-            src={mainId.video}
-            title={mainId["video-title"]}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </Box>
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item xs={12} md={6}>
+            <Typography variant="body2" gutterBottom>
+              <strong>Category:</strong> {product.category}
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              <strong>Difficulty:</strong> {product.difficulty}
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              <strong>Preparation Time:</strong> {product.preparationTime}
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              <strong>Servings:</strong> {product.servings}
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              <strong>Recipe:</strong> {product.recipes}
+            </Typography>
+          </Grid>
+        </Grid>
+        {product.video && (
+          <Box sx={{ width: "100%", mt: 3 }}>
+            <iframe
+              width="100%"
+              height="400"
+              src={product.video}
+              title={product["video-title"]}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </Box>
+        )}
       </Container>
       <ScrollToTopButton />
     </>
