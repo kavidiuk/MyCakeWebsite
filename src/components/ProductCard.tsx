@@ -23,7 +23,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <Card onClick={handleProductDetail}>
-      {/* messo un'altezza fissa, non va bene cambiala */}
       <Grid height={300}>
         <CardMedia component="img" height="200" image={image} alt={title} />
         <CardContent>

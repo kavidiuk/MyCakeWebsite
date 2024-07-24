@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import { Grid } from "@mui/material";
+import { Grid, Box, Fade, Grow, Zoom } from "@mui/material";
 import { Container } from "@mui/system";
 import { styled } from "@mui/material/styles";
 
@@ -32,43 +32,55 @@ const AboutUs: React.FC = () => {
 
   return (
     <Container sx={{ pt: 3 }}>
-      <Typography
-        variant="h4"
-        color="textPrimary"
-        fontWeight="bold"
-        sx={{ mb: 2, textAlign: "center" }}
-      >
-        {title}
-      </Typography>
+      <Zoom in={true} timeout={1000}>
+        <Typography
+          variant="h4"
+          color="textPrimary"
+          fontWeight="bold"
+          sx={{ mb: 2, textAlign: "center" }}
+        >
+          {title}
+        </Typography>
+      </Zoom>
 
       <Grid container spacing={4}>
         <Grid item xs={12} md={8}>
-          <Typography variant="h6" color="textSecondary" sx={{ p: 2, pt: 3 }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            dicta accusamus illum tempora. Alias sed similique vel ab odio
-            distinctio ducimus, culpa, fugit ipsum nobis, corrupti minima ea?
-            Necessitatibus, nesciunt.
-          </Typography>
+          <Fade in={true} timeout={1500}>
+            <Typography variant="h6" color="textSecondary" sx={{ p: 2, pt: 3 }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              dicta accusamus illum tempora. Alias sed similique vel ab odio
+              distinctio ducimus, culpa, fugit ipsum nobis, corrupti minima ea?
+              Necessitatibus, nesciunt.
+            </Typography>
+          </Fade>
         </Grid>
         <Grid item xs={12} md={4} container justifyContent="center">
-          <StyledImage src={image} alt={title} />
+          <Grow in={true} timeout={2000}>
+            <StyledImage src={image} alt={title} />
+          </Grow>
         </Grid>
       </Grid>
 
       <Section container spacing={4}>
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" color="textPrimary" sx={{ mb: 2 }}>
-            Our Mission
-          </Typography>
-          <Typography variant="body1" color="textSecondary">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            cupiditate eligendi. Explicabo vero molestias nihil nulla molestiae
-            inventore enim ut est eius possimus consequuntur aperiam tempora
-            reprehenderit, at doloremque. Maiores?
-          </Typography>
+          <Zoom in={true} timeout={1500}>
+            <Box>
+              <Typography variant="h5" color="textPrimary" sx={{ mb: 2 }}>
+                Our Mission
+              </Typography>
+              <Typography variant="body1" color="textSecondary">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
+                cupiditate eligendi. Explicabo vero molestias nihil nulla
+                molestiae inventore enim ut est eius possimus consequuntur
+                aperiam tempora reprehenderit, at doloremque. Maiores?
+              </Typography>
+            </Box>
+          </Zoom>
         </Grid>
         <Grid item xs={12} md={6} container justifyContent="center">
-          <StyledImage src={image} alt="Mission Image" />
+          <Fade in={true} timeout={2000}>
+            <StyledImage src={image} alt="Mission Image" />
+          </Fade>
         </Grid>
       </Section>
 
@@ -78,15 +90,19 @@ const AboutUs: React.FC = () => {
         sx={{ display: "flex", justifyContent: "center" }}
       >
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" color="textPrimary" sx={{ mb: 2 }}>
-            Our Story
-          </Typography>
-          <Typography variant="body1" color="textSecondary">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            cupiditate eligendi. Explicabo vero molestias nihil nulla molestiae
-            inventore enim ut est eius possimus consequuntur aperiam tempora
-            reprehenderit, at doloremque. Maiores?
-          </Typography>
+          <Grow in={true} timeout={2000}>
+            <Box>
+              <Typography variant="h5" color="textPrimary" sx={{ mb: 2 }}>
+                Our Story
+              </Typography>
+              <Typography variant="body1" color="textSecondary">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
+                cupiditate eligendi. Explicabo vero molestias nihil nulla
+                molestiae inventore enim ut est eius possimus consequuntur
+                aperiam tempora reprehenderit, at doloremque. Maiores?
+              </Typography>
+            </Box>
+          </Grow>
         </Grid>
       </Section>
     </Container>
