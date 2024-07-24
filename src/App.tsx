@@ -8,6 +8,7 @@ import ProductsPage from "./pages/ProductsPage";
 import ProductDetail from "./pages/ProductDetail";
 import Footer from "./components/Footer";
 import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
 const App: React.FC = () => {
   return (
     <Router>
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

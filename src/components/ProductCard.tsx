@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
-import { auto } from "@popperjs/core";
 
 interface ProductCardProps {
   id: number;
