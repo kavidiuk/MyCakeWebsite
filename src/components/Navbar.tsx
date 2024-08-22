@@ -12,26 +12,93 @@ import {
   ListItemText,
   useMediaQuery,
   useTheme,
+  Box,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/images/27.png";
+import "@fontsource/great-vibes";
 
 function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const location = useLocation();
 
   const handleDrawerOpen = () => setDrawerOpen(true);
   const handleDrawerClose = () => setDrawerOpen(false);
+
+  const navLinks = [
+    { text: "Home", path: "/" },
+    { text: "Chi Siamo", path: "/aboutUs" },
+    { text: "Prodotti", path: "/products" },
+    { text: "Contatti", path: "/contact" },
+  ];
+
+  const renderNavLinks = () =>
+    navLinks.map((link) => (
+      <Button
+        key={link.text}
+        color="inherit"
+        component={Link}
+        to={link.path}
+        sx={{
+          ...(location.pathname === link.path && {
+            borderBottom: `2px solid ${theme.palette.primary.main}`,
+          }),
+        }}
+      >
+        {link.text}
+      </Button>
+    ));
+
+  const renderDrawerList = () =>
+    navLinks.map((link) => (
+      <ListItem
+        button
+        key={link.text}
+        component={Link}
+        to={link.path}
+        onClick={handleDrawerClose}
+      >
+        <ListItemText primary={link.text} />
+      </ListItem>
+    ));
 
   return (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            titolo1
+            <Box
+              component="img"
+              src={logo}
+              alt="Logo"
+              sx={{
+                height: 60,
+                verticalAlign: "middle",
+                display: {
+                  xs: "none",
+                  sm: "none",
+                  md: "inline-flex",
+                  lg: "inline-flex",
+                  xl: "inline-flex",
+                },
+              }}
+            />
+            <span
+              style={{
+                fontFamily: "Great Vibes, cursive",
+                fontSize: "1.4rem",
+                display: "inline",
+                // marginLeft: "-3rem",
+              }}
+            >
+              Kavidu's Cake Boutique
+            </span>
           </Link>
         </Typography>
+
         {isSmallScreen ? (
           <>
             <IconButton
@@ -42,50 +109,22 @@ function Navbar() {
             >
               <MenuIcon />
             </IconButton>
-            <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
-              <List>
-                <ListItem component={Link} to="/" onClick={handleDrawerClose}>
-                  <ListItemText primary="Home" />
-                </ListItem>
-                <ListItem
-                  component={Link}
-                  to="/aboutUs"
-                  onClick={handleDrawerClose}
-                >
-                  <ListItemText primary="About" />
-                </ListItem>
-                <ListItem
-                  component={Link}
-                  to="/products"
-                  onClick={handleDrawerClose}
-                >
-                  <ListItemText primary="Products" />
-                </ListItem>
-                <ListItem
-                  component={Link}
-                  to="/contact"
-                  onClick={handleDrawerClose}
-                >
-                  <ListItemText primary="Contact" />
-                </ListItem>
-              </List>
+            <Drawer
+              anchor="left"
+              open={drawerOpen}
+              onClose={handleDrawerClose}
+              sx={{
+                "& .MuiDrawer-paper": {
+                  width: 250,
+                  animation: "slide-in 0.3s ease-out",
+                },
+              }}
+            >
+              <List>{renderDrawerList()}</List>
             </Drawer>
           </>
         ) : (
-          <>
-            <Button color="inherit" component={Link} to="/">
-              Home
-            </Button>
-            <Button color="inherit" component={Link} to="/aboutUs">
-              About
-            </Button>
-            <Button color="inherit" component={Link} to="/products">
-              Products
-            </Button>
-            <Button color="inherit" component={Link} to="/contact">
-              Contact
-            </Button>
-          </>
+          <div>{renderNavLinks()}</div>
         )}
       </Toolbar>
     </AppBar>

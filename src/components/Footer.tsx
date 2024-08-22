@@ -13,24 +13,10 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Footer: React.FC = () => {
   const contatti = {
-    nome: "Nome Azienda",
-    indirizzo: "Via Lorem Ipsum",
-    tel: 123456789,
-    email: "johndoe@gmail.com",
-  };
-
-  const link = {
-    aboutUs: "About Us",
-    contact: "Contact",
-    homePage: "Home Page",
-    productsPage: "Products Page",
-  };
-
-  const linkHref = {
-    aboutUs: "/aboutUs",
-    contact: "/contact",
-    homePage: "/",
-    productsPage: "/products",
+    nome: "Kavidu Francesco",
+    indirizzo: "Via Leonardo Da Vinci",
+    tel: 3713837952,
+    email: "kavidubusiness@gmail.com",
   };
 
   const linkStyles = {
@@ -38,6 +24,20 @@ const Footer: React.FC = () => {
     color: "inherit",
     display: "block",
     marginBottom: "8px",
+  };
+
+  const link = {
+    aboutUs: "Chi Siamo",
+    contact: "Contatti",
+    homePage: "Pagina Iniziale",
+    productsPage: "Pagina Prodotti",
+  };
+
+  const linkHref = {
+    aboutUs: "/aboutUs",
+    contact: "/contact",
+    homePage: "/",
+    productsPage: "/products",
   };
 
   const iconButtonStyles = {
@@ -63,6 +63,7 @@ const Footer: React.FC = () => {
               {contatti.indirizzo}
             </Typography>
           </Grid>
+
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" fontWeight="bold">
               Link Utili
@@ -80,6 +81,7 @@ const Footer: React.FC = () => {
               {link.contact}
             </Link>
           </Grid>
+
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" fontWeight="bold">
               Seguici
@@ -101,6 +103,7 @@ const Footer: React.FC = () => {
           </Grid>
         </Grid>
       </Container>
+
       <Typography variant="body2" align="center" mt={4}>
         &copy; {new Date().getFullYear()} Kavidu francesco. Tutti i diritti
         riservati.

@@ -28,7 +28,7 @@ const Section = styled(Grid)(({ theme }) => ({
 const AboutUs: React.FC = () => {
   const image =
     "https://images.unsplash.com/photo-1721332153289-0c46dc38981b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8";
-  const title = "About Us";
+  const title = "Chi Siamo";
 
   return (
     <Container sx={{ pt: 3 }}>
@@ -47,10 +47,11 @@ const AboutUs: React.FC = () => {
         <Grid item xs={12} md={8}>
           <Fade in={true} timeout={1500}>
             <Typography variant="h6" color="textSecondary" sx={{ p: 2, pt: 3 }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              dicta accusamus illum tempora. Alias sed similique vel ab odio
-              distinctio ducimus, culpa, fugit ipsum nobis, corrupti minima ea?
-              Necessitatibus, nesciunt.
+              La nostra missione è addolcire ogni momento speciale con torte
+              artigianali di altissima qualità. Usiamo solo ingredienti freschi
+              e genuini, selezionati con cura per garantire sapori autentici e
+              indimenticabili. Ogni torta che creiamo è un’opera d’arte, pensata
+              per portare gioia e dolcezza nelle vostre vite.
             </Typography>
           </Fade>
         </Grid>
@@ -66,13 +67,15 @@ const AboutUs: React.FC = () => {
           <Zoom in={true} timeout={1500}>
             <Box>
               <Typography variant="h5" color="textPrimary" sx={{ mb: 2 }}>
-                Our Mission
+                La Nostra Storia
               </Typography>
               <Typography variant="body1" color="textSecondary">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
-                cupiditate eligendi. Explicabo vero molestias nihil nulla
-                molestiae inventore enim ut est eius possimus consequuntur
-                aperiam tempora reprehenderit, at doloremque. Maiores?
+                La nostra storia inizia con una passione senza tempo per la
+                pasticceria. Da una piccola cucina di casa, siamo cresciuti fino
+                a diventare un punto di riferimento per chi cerca torte uniche e
+                deliziose. Ogni nostra creazione racconta un pezzo della nostra
+                storia, fatta di amore per i dolci, dedizione e cura per ogni
+                dettaglio.
               </Typography>
             </Box>
           </Zoom>
@@ -93,13 +96,15 @@ const AboutUs: React.FC = () => {
           <Grow in={true} timeout={2000}>
             <Box>
               <Typography variant="h5" color="textPrimary" sx={{ mb: 2 }}>
-                Our Story
+                I Nostri Valori
               </Typography>
               <Typography variant="body1" color="textSecondary">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
-                cupiditate eligendi. Explicabo vero molestias nihil nulla
-                molestiae inventore enim ut est eius possimus consequuntur
-                aperiam tempora reprehenderit, at doloremque. Maiores?
+                I nostri valori sono il segreto del nostro successo. Crediamo
+                nella qualità, nella tradizione e nell’innovazione. Ogni torta è
+                preparata con passione, rispettando ricette classiche ma con un
+                tocco di originalità. La soddisfazione dei nostri clienti è la
+                nostra priorità, e lavoriamo ogni giorno per superare le loro
+                aspettative, rendendo ogni momento davvero speciale.
               </Typography>
             </Box>
           </Grow>

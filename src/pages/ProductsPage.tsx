@@ -16,7 +16,9 @@ import {
 import ProductCard from "../components/ProductCard";
 import Cake from "../services/Cake.json";
 import ScrollToTopButton from "../assets/utils/Utils";
-
+import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 // function filterCakes(cakes: any[], searchItem: string) {
 //   return cakes
 //     .filter(
@@ -45,11 +47,11 @@ const filterCakes = (cakes: any[], filters: any) => {
         (preparationTime ? cake.preparationTime === preparationTime : true)
       );
     })
-    .sort((a: { id: number }, b: { id: number }) => a.id - b.id);
+    .sort((a, b) => a.id - b.id);
 };
 
 const ProductsPage: React.FC = () => {
-  const idsToShow = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  const idsToShow = [45, 46, 47, 48, 49];
   const filteredCakes = Cake.filter((cake) => idsToShow.includes(cake.id));
 
   const [filters, setFilters] = useState({
@@ -80,28 +82,32 @@ const ProductsPage: React.FC = () => {
     }));
   };
 
+  const navigate = useNavigate();
+
+  const handleCategoryPage = (id: number) => {
+    navigate(`/products/${id}`);
+  };
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
   const filteredResults = filterCakes(filteredCakes, filters);
 
   return (
-    <>
-      <Container>
-        <Box
-          my={4}
-          sx={{ display: "-ms-inline-flexbox", justifyContent: "center" }}
+    <Container>
+      <Box
+        my={4}
+        sx={{ display: "-ms-inline-flexbox", justifyContent: "center" }}
+      >
+        <Typography
+          sx={{ display: "flex", justifyContent: "center" }}
+          variant="h3"
+          align="center"
+          gutterBottom
         >
-          <Typography
-            sx={{ display: "flex", justifyContent: "center" }}
-            variant="h3"
-            align="center"
-            gutterBottom
-          >
-            seleziona
-          </Typography>
+          Altro
+        </Typography>
 
-          <Box
+        {/* <Box
             mb={4}
             sx={{
               justifyContent: "center",
@@ -161,28 +167,29 @@ const ProductsPage: React.FC = () => {
               fullWidth
               margin="normal"
             />
-          </Box>
+          </Box> */}
 
-          <Grid
-            container
-            spacing={4}
-            justifyContent={isSmallScreen ? "center" : "start"}
-          >
-            {filteredResults.map((cake) => (
-              <Grid item xs={12} sm={6} md={4} key={cake.id} sx={{ p: 2 }}>
-                <ProductCard
-                  title={cake.title}
-                  description={cake.description}
-                  image={cake.img}
-                  id={cake.id}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-        <ScrollToTopButton />
-      </Container>
-    </>
+        <Grid
+          container
+          spacing={4}
+          justifyContent={isSmallScreen ? "center" : "start"}
+        >
+          {filteredResults.map((cake) => (
+            <Grid item xs={12} sm={6} md={4} key={cake.id}>
+              <ProductCard
+                title={cake.title}
+                description={cake.description}
+                image={cake.img}
+                id={cake.id}
+                category={""}
+                navigationPath={() => handleCategoryPage(cake.id)}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+      <ScrollToTopButton />
+    </Container>
   );
 };
 

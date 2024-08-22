@@ -38,9 +38,10 @@ const ProductDetail: React.FC = () => {
           variant="outlined"
           sx={{ mb: 3 }}
         >
-          Back
+          Indietro
         </Button>
       </Container>
+
       <Container sx={{ textAlign: "center", mb: 3 }}>
         <Typography variant="h4" component="h2" gutterBottom>
           {product.title}
@@ -77,6 +78,7 @@ const ProductDetail: React.FC = () => {
             </Typography>
           </Grid>
         </Grid>
+
         {product.video && (
           <Box sx={{ width: "100%", mt: 3 }}>
             <iframe
