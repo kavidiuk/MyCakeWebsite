@@ -16,6 +16,7 @@ import {
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import PinterestIcon from "@mui/icons-material/Pinterest";
 
 const Contact: React.FC = () => {
   const linkStyles = {
@@ -39,6 +40,7 @@ const Contact: React.FC = () => {
       /\s+/g,
       ""
     )}`,
+    pinterest: "https://it.pinterest.com/retimav/",
   };
 
   const fullPhoneNumber = `${mainContact.it}${mainContact.number.replace(
@@ -157,7 +159,23 @@ const Contact: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                : Kavidu
+                WhatsApp
+              </a>
+            </Typography>
+          </SocialGrid>
+
+          <SocialGrid>
+            <IconButton color="primary" href={link.pinterest}>
+              <PinterestIcon fontSize="large" />
+            </IconButton>
+            <Typography variant="h6" fontWeight="bold">
+              <a
+                style={linkStyles}
+                href={link.pinterest}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pinterest
               </a>
             </Typography>
           </SocialGrid>

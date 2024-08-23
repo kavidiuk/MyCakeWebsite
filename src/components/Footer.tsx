@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const Footer: React.FC = () => {
   const contatti = {
     nome: "Kavidu Francesco",
@@ -93,11 +93,16 @@ const Footer: React.FC = () => {
               >
                 <InstagramIcon />
               </IconButton>
+
               <IconButton href="https://www.facebook.com" sx={iconButtonStyles}>
                 <FacebookIcon />
               </IconButton>
-              <IconButton href="https://www.twitter.com" sx={iconButtonStyles}>
-                <TwitterIcon />
+
+              <IconButton
+                href="https://it.pinterest.com/retimav/"
+                sx={iconButtonStyles}
+              >
+                <PinterestIcon />
               </IconButton>
             </Box>
           </Grid>

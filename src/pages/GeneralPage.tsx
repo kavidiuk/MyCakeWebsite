@@ -36,7 +36,7 @@ const GeneralPage: React.FC = () => {
           variant="outlined"
           sx={{ mb: 3 }}
         >
-          Back
+          Indietro
         </Button>
       </Container>
 
